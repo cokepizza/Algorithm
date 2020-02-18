@@ -34,8 +34,6 @@ public class MORDOR {
 			
 			initSegTree(0, N-1, 1);
 			
-			System.out.println(segTree[1].max);
-			System.out.println(segTree[1].min);
 			for(int j=0; j<Q; ++j) {
 				st = new StringTokenizer(br.readLine());
 				int ds = Integer.parseInt(st.nextToken());
@@ -48,12 +46,13 @@ public class MORDOR {
 	}
 
 	private static Node querySegTree(int ds, int de, int s, int e, int index) {
-		if(s <= ds && de <=e) return segTree[index];
-		if(de < s || e < ds) return new Node(Integer.MAX_VALUE, Integer.MIN_VALUE);
+ 		if(ds <= s && e <= de) return segTree[index];
+		if(de < s || e < ds) return new Node(Integer.MIN_VALUE, Integer.MAX_VALUE);
+		
 		int m = (s + e) / 2;
-		Node left = querySegTree(ds, m, s, m, index*2);
-		Node right = querySegTree(m+1, de, m+1, e, index*2+1);
-		return new Node(Math.min(left.min,  right.min), Math.max(left.max, right.max));
+		Node left = querySegTree(ds, de, s, m, index*2);
+		Node right = querySegTree(ds, de, m+1, e, index*2+1);
+		return new Node(Math.max(left.max, right.max), Math.min(left.min,  right.min));
 	}
 
 	private static Node initSegTree(int s, int e, int index) {
@@ -62,6 +61,6 @@ public class MORDOR {
 		int m = (s + e) / 2;
 		Node left = initSegTree(s, m, index*2);
 		Node right = initSegTree(m+1, e, index*2+1);
-		return segTree[index] = new Node(Math.min(left.min,right.min), Math.max(left.max, right.max));
+		return segTree[index] = new Node(Math.max(left.max, right.max), Math.min(left.min,right.min));
 	}
 }
