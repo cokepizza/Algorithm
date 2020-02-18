@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
 
 public class Code1339_2 {
 	public static class Node {
@@ -20,7 +19,6 @@ public class Code1339_2 {
 	public static void main(String args[]) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
-		int max = Integer.MIN_VALUE;
 		HashMap <Integer, Integer> hashMap = new HashMap<>();
 		ArrayList <Node> list = new ArrayList <>();
 		
