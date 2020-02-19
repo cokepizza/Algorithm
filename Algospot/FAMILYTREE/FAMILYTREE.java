@@ -50,14 +50,6 @@ public class FAMILYTREE {
 				int far = getQuery(q1, q2);
 				sb.append(far + "\n");	
 			}
-			
-			
-//			for(int i=0; i<N; ++i) {
-//				for(int j=0; j< MAX_SQUARD; ++j) {
-//					System.out.print(cache[i][j] + " ");
-//				}
-//				System.out.println();
-//			}
 		}
 		System.out.print(sb.substring(0, sb.length() - 1));
 	}
@@ -70,8 +62,9 @@ public class FAMILYTREE {
 	private static int getQuery(int q1, int q2) {
 		if(depth[q1] < depth[q2]) return getQuery(q2, q1);
 		
-		// q1 > q2
-		int diff = depth[q1] - depth[q2];
+		// depth[q1] > depth[q2]
+		int initDiff = depth[q1] - depth[q2];
+		int diff = initDiff;
 		for(int i=MAX_SQUARD-1; i>=0; --i) {
 			int height = 1 << i;
 			if(diff - height < 0) continue;
@@ -79,12 +72,19 @@ public class FAMILYTREE {
 			q1 = cache[q1][i];
 		}
 		
+		if(q1 == q2) return initDiff;
+		
 		// same depth
-		for(int i=MAX_SQUARD-1; i>=0; --i) {
+		int commonDiff = 0;
+		for(int i=MAX_SQUARD-1; i>=0 ; --i) {
 			if(cache[q1][i] == -1 || cache[q2][i] == -1) continue;
-			if(cache[q1][i] == cache[q2][i]) return 1 << (i+1);
+			if(cache[q1][i] != cache[q2][i]) {
+				q1 = cache[q1][i];
+				q2 = cache[q2][i];
+				commonDiff += (1 << (i+1));
+			}
 		}
 		
-		return 0;
+		return initDiff + commonDiff + 2;
 	}
 }
