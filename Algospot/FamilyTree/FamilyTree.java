@@ -1,4 +1,4 @@
-package FAMILYTREE;
+package FamilyTree;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class FAMILYTREE {
+public class FamilyTree {
 	private static int[][] cache;
 	private static int[] depth;
 	private static int MAX_SQUARD = 18;

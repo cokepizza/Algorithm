@@ -1,11 +1,11 @@
-package MORDOR;
+package Mordor;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class MORDOR {
+public class Mordor {
 	public static class Node {
 		int max, min;
 		public Node(int max, int min) {

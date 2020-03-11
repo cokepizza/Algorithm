@@ -1,6 +1,7 @@
-package Insertion;
+package BinarySearchTree;
 
-public class Insertion_BST_Treap2 {
+public class BST_Treap {
+	
 	public static class TreapPair {
 		Treap left, right;
 		public TreapPair (Treap left, Treap right) {
@@ -58,6 +59,9 @@ public class Insertion_BST_Treap2 {
 		
 		if(root.priority < node.priority) {
 			TreapPair splitted = split(root, node.key);
+			node.setLeft(splitted.left);
+			node.setRight(splitted.right);
+			return node;
 		} else if(root.key < node.key) {
 			root.setRight(insert(root.right, node));
 		} else {
@@ -117,8 +121,8 @@ public class Insertion_BST_Treap2 {
 		int ls = (root.left != null) ? root.left.size : 0;
 		return ls + 1 + countLessThan(root.right, key);	
 	}
-
+	
 	public static void main(String args[]) {
-		Treap treap = new Treap(10);
+		
 	}
 }
