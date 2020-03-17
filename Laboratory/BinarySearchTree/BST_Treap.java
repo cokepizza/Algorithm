@@ -53,7 +53,7 @@ public class BST_Treap {
 		return new TreapPair(res.left, root);
 	}
 	
-	//	root에 node삽입
+	//	root�뿉 node�궫�엯
 	private static Treap insert(Treap root, Treap node) {
 		if(root == null) return node;
 		
@@ -71,7 +71,7 @@ public class BST_Treap {
 		return root;
 	}
 	
-	//	기본가정 max(a) < min(b)
+	//	湲곕낯媛��젙 max(a) < min(b)
 	private static Treap merge(Treap a, Treap b) {
 		if(a == null) return b;
 		if(b == null) return a;
@@ -84,7 +84,7 @@ public class BST_Treap {
 		return a;
 	}
 	
-	//	root에서 key삭제
+	//	root�뿉�꽌 key�궘�젣
 	private static Treap erase(Treap root, int key) {
 		if(root == null) return root;
 		
@@ -102,7 +102,7 @@ public class BST_Treap {
 		return root;
 	}
 	
-	//	크기순으로(중위순회) k번째 노드
+	//	�겕湲곗닚�쑝濡�(以묒쐞�닚�쉶) k踰덉㎏ �끂�뱶
 	private static Treap kth(Treap root, int k) {
 		int leftSize = 0;
 		if(root.left != null) leftSize = root.left.size;
@@ -111,7 +111,7 @@ public class BST_Treap {
 		return kth(root.right, k - leftSize - 1);
 	}
 	
-	//	key보다 작은 노드의 개수
+	//	key蹂대떎 �옉�� �끂�뱶�쓽 媛쒖닔
 	private static int countLessThan(Treap root, int key) {
 		if(root == null) return 0;
 		
