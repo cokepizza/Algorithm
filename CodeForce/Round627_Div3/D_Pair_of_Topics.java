@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-//	정렬 후 이진탐색으로 시간복잡도를 낮췄음
 public class D_Pair_of_Topics {
 	public static void main(String args[]) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -18,26 +17,70 @@ public class D_Pair_of_Topics {
 			a[i] = Integer.parseInt(st.nextToken());
 		}
 		
-		int []diff = new int[t];
 		st = new StringTokenizer(br.readLine());
 		for(int i=0; i<t; ++i) {
-			diff[i] = a[i] - Integer.parseInt(st.nextToken());
+			a[i] -= Integer.parseInt(st.nextToken());
 		}
 		
 		long count = 0;
-		Arrays.sort(diff);
+		Arrays.sort(a);
 		for(int i=0; i<t; ++i) {
-			int idx = upper_bound(i+1, t, diff, -diff[i]);
-			count += t - idx;
+			if(a[i] > 0) {
+				count += t-i-1;
+			} else {
+				long idx = upper_bound(i+1, t, a, -a[i]);
+				count += t-idx;
+			}
 		}
 		
 		System.out.println(count);
+//		int ans = upper_bound(0, 5, new int[] {1, 2, 2, 2, 3}, 2);
+//		System.out.println(ans);
 	}
 	
+//	private static int upper_bound(int s, int e, int[] list, int key) {
+//		if(s >= e) return e;
+//		int m = (s + e) / 2;
+//		if(key < list[m]) return upper_bound(s, m, list, key);
+//		else return upper_bound(m+1, e, list, key);
+//	}
+	
 	private static int upper_bound(int s, int e, int[] list, int key) {
-		if(s >= e) return e;
-		int m = (s + e) / 2;
-		if(key < list[m]) return upper_bound(s, m, list, key);
-		else return upper_bound(m+1, e, list, key);
+		while(s < e) {
+			int m = (s + e) / 2;
+			if(key < list[m]) {
+				e = m;			
+			} else {
+				s = m+1;			
+			}
+		}
+		
+		return e;
+	}
+	
+	public static long binarySearch(Long[] dp,int curr)
+	{
+		int start=curr+1;
+		int end=dp.length-1;
+		
+		long ans=-1;
+		
+		while(start<=end)
+		{
+			int mid=(start+end)/2;
+			
+			if(dp[mid]+dp[curr]>0)
+			{
+				ans=mid;
+				
+				end=mid-1;
+			}
+			else
+			{
+				start=mid+1;
+			}
+		}
+		
+		return ans;
 	}
 }
