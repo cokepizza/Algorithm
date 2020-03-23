@@ -1,4 +1,4 @@
-package Round627_Div3;
+package Round_2020_3_12;
 
 import java.util.Arrays;
 import java.util.Scanner;
