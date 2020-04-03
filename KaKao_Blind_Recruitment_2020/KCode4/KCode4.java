@@ -19,18 +19,18 @@ public class KCode4 {
 				this.alpha[next] = new Trie();
 			}
 			
-			int diff = word.length() - index;
+			int diff = word.length() - index - 1;
 			if(this.countMap.containsKey(diff)) {
 				this.countMap.put(diff, this.countMap.get(diff)+1);
 			} else {
-				this.countMap.put(diff, 0);
+				this.countMap.put(diff, 1);
 			}
 			this.alpha[next].add(word, index + 1);
 		}
 		
 		public int find(String word, int index) {
-			if(word.charAt(index) == '?') {
-				int diff = word.length() - index;
+			if(word.charAt(index+1) == '?') {
+				int diff = word.length() - index-1;
 				return this.countMap.get(diff);
 			}
 			
@@ -44,7 +44,11 @@ public class KCode4 {
 	}
 	
 	public static void main(String args[]) {
-		int[] res = solution(new String[] {"frodo", "front", "frost", "frozen", "frame", "kakao"}, new String[] {"fro??", "????o", "fr???", "fro???", "pro?"});
+//		int[] res = solution(new String[] {"frodo", "front", "frost", "frozen", "frame", "kakao"}, new String[] {"fro??", "????o", "fr???", "fro???", "pro?"});
+		int[] res = solution(new String[] {"frodo", "front", "frost", "frozen", "frame", "kakao"}, new String[] {"fro??"});
+		for(int i=0; i<res.length; ++i) {
+			System.out.println(res[i]);
+		}
 	}
 	
     public static int[] solution(String[] words, String[] queries) {
