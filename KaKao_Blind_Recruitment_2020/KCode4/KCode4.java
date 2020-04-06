@@ -19,7 +19,7 @@ public class KCode4 {
 				this.alpha[next] = new Trie();
 			}
 			
-			int diff = word.length() - index - 1;
+			int diff = word.length() -index;
 			if(this.countMap.containsKey(diff)) {
 				this.countMap.put(diff, this.countMap.get(diff)+1);
 			} else {
@@ -29,9 +29,14 @@ public class KCode4 {
 		}
 		
 		public int find(String word, int index) {
-			if(word.charAt(index+1) == '?') {
-				int diff = word.length() - index-1;
-				return this.countMap.get(diff);
+			if(word.charAt(index) == '?') {
+				int diff = word.length() - index;
+				if(this.countMap.containsKey(diff)) {
+					return this.countMap.get(diff);	
+				} else {
+					return 0;
+				}
+				
 			}
 			
 			int next = word.charAt(index) - 'a';
@@ -45,7 +50,7 @@ public class KCode4 {
 	
 	public static void main(String args[]) {
 //		int[] res = solution(new String[] {"frodo", "front", "frost", "frozen", "frame", "kakao"}, new String[] {"fro??", "????o", "fr???", "fro???", "pro?"});
-		int[] res = solution(new String[] {"frodo", "front", "frost", "frozen", "frame", "kakao"}, new String[] {"fro??"});
+		int[] res = solution(new String[] {"frodo", "front", "frost", "frozen", "frame", "kakao"}, new String[] {"k?????"});
 		for(int i=0; i<res.length; ++i) {
 			System.out.println(res[i]);
 		}
@@ -60,10 +65,7 @@ public class KCode4 {
     		String word = words[i];
     		trie.add(word, 0);
     		
-    		StringBuilder reverser = new StringBuilder();
-    		for(int j=word.length()-1; j >=0; --j) {
-    			reverser.append(word.charAt(j));
-    		}
+    		StringBuilder reverser = new StringBuilder(word);
     		reverseTrie.add(reverser.reverse().toString(), 0);
     	}
     	
@@ -72,7 +74,9 @@ public class KCode4 {
     	for(int i=0; i<queryLeng; ++i) {
     		String query = queries[i];
     		if(query.charAt(0) == '?') {
-    			
+    			StringBuilder sb = new StringBuilder(query);
+    			int res = reverseTrie.find(sb.reverse().toString(), 0);
+    			resArr.add(res);
     		} else {
     			int res = trie.find(query, 0);
     			resArr.add(res);
