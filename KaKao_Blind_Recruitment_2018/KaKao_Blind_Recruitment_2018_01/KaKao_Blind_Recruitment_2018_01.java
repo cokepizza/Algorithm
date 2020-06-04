@@ -1,48 +1,34 @@
 package KaKao_Blind_Recruitment_2018_01;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-
 public class KaKao_Blind_Recruitment_2018_01 {
 	public static void main(String args[]) {
-		int res = solution(3, new String[] {"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"});
-//		int res = solution(3, new String[] {"Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul"});
-//		int res = solution(2, new String[] {"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju", "NewYork", "Rome"});
-//		int res = solution(5, new String[] {"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju", "NewYork", "Rome"});
-//		int res = solution(2, new String[] {"Jeju", "Pangyo", "NewYork", "newyork"});
-//		int res = solution(0, new String[] {"Jeju", "Pangyo", "Seoul", "NewYork", "LA"});
-//		int res = solution(0, new String[] {"zz", "zz", "zz"});
-		System.out.println(res);
+		String[] res = solution(5, new int[] {9, 20, 28, 18, 11}, new int[] {30, 1, 21, 17, 28});
+//		String[] res = solution(6, new int[] {46, 33, 33 ,22, 31, 50}, new int[] {27 ,56, 19, 14, 14, 10});
+		
+		for(int i=0; i<res.length; ++i) {
+			System.out.println(res[i]);
+		}
 	}
 	
-	public static int solution(int cacheSize, String[] cities) {
-        LinkedList <String> cache = new LinkedList <>();
-        HashSet <String> holdSet = new HashSet <>();
-        int leng = cities.length;
-        int timer = 0;
-        for(int i=0; i<leng; ++i) {
-        	String pop = cities[i].toLowerCase();
-        	
-        	//	cache hit
-        	if(holdSet.contains(pop)) {
-        		cache.remove(pop);
-        		cache.add(pop);
-        		timer += 1;
-        		continue;
-        	}
-        	
-        	//	cache miss
-        	if(cache.size() >= cacheSize) {
-        		String swipeOut = cache.pollFirst();
-        		holdSet.remove(swipeOut);
-    		}
-        	if(cache.size() + 1 <= cacheSize) {
-        		cache.addLast(pop);
-            	holdSet.add(pop);
-        	}
-        	timer += 5;
-        }
-        
-        return timer;
+	public static String[] solution(int n, int[] arr1, int[] arr2) {
+		int leng = arr1.length;
+		String[] answer = new String[leng];
+		
+		
+		for(int i=0; i<leng; ++i) {
+			int union = arr1[i] | arr2[i];
+			String res = Integer.toBinaryString(union);
+			
+			while(res.length() < leng) {
+				res = "0" + res;
+			}
+			
+			answer[i] = "";
+			for(int j=0; j<leng; ++j) {
+				answer[i] += res.charAt(j) == '0' ? " " : "#"; 
+			}
+		}
+		
+        return answer;
     }
 }
