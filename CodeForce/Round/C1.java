@@ -14,11 +14,7 @@ public class C1 {
 			int n = Integer.parseInt(st.nextToken());
 			k =  Integer.parseInt(st.nextToken());
 			
-			if(solve(n)) {
-				
-			}
 		}
 		System.out.print(sb.substring(0, sb.length() -1));
 	}
-	``
 }

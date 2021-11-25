@@ -3,7 +3,7 @@ package Round_2020_3_19;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-x
+
 public class D1_Prefix_Suffix_Palindrome_Easy {
 	private static String word;
 	public static void main(String args[]) throws NumberFormatException, IOException {
