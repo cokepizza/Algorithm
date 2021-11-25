@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-//	±âµÕ°ú º¸ ¼³Ä¡
+//	ê¸°ë‘¥ê³¼ ë³´ ì„¤ì¹˜
 //	https://programmers.co.kr/learn/courses/30/lessons/60061
 
 public class KaKao_Blind_Recruitment_2020_05 {
@@ -26,12 +26,12 @@ public class KaKao_Blind_Recruitment_2020_05 {
         	int[] pop = build_frame[i];
         	int x = pop[0]; int y = pop[1]; int a = pop[2]; int b = pop[3];
         	if(b == 1) {
-    			//	0 º¸ ¼³Ä¡, 1 ±âµÕ ¼³Ä¡
+    			//	0 ë³´ ì„¤ì¹˜, 1 ê¸°ë‘¥ ì„¤ì¹˜
     			if(checkValid(y, x, a)) {
     				arr[y][x][a] = true;
     			}
         	} else {
-        		//	»èÁ¦
+        		//	ì‚­ì œ
         		if(arr[y][x][a]) {
         			arr[y][x][a] = false;
         			boolean pass = true;
@@ -82,9 +82,9 @@ public class KaKao_Blind_Recruitment_2020_05 {
     }
 	
 	private static boolean checkValid(int y, int x, int a) {
-		if(a == 1) {	//	º¸
+		if(a == 1) {	//	ï¿½ï¿½
 			if((y-1 >= 0 && arr[y-1][x][1-a]) || (y-1 >= 0 && x+1 <= n && arr[y-1][x+1][1-a]) || (x+1 <= n && x-1 >= 0 && arr[y][x-1][a] && arr[y][x+1][a])) return true;
-		} else {	//	±âµÑ
+		} else {	//	ï¿½ï¿½ï¿½
 			if(y == 0 || (y-1 >= 0 && arr[y-1][x][a]) || arr[y][x][1-a] || (x-1 >= 0 && arr[y][x-1][1-a])) return true;
 		}
 		return false;

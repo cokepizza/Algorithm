@@ -3,7 +3,7 @@ package KaKao_Blind_Recruitment_2020_04;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-//	°¡»ç °Ë»ö
+//	ê°€ì‚¬ ê²€ìƒ‰
 //	https://programmers.co.kr/learn/courses/30/lessons/60060
 
 public class KaKao_Blind_Recruitment_2020_04 {

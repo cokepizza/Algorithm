@@ -1,6 +1,6 @@
 package KaKao_Blind_Recruitment_2020_03;
 
-//	ÀÚ¹°¼è¿Í ¿­¼è
+//	ìë¬¼ì‡ ì™€ ì—´ì‡ 
 //	https://programmers.co.kr/learn/courses/30/lessons/60059
 
 public class KaKao_Blind_Recruitment_2020_03_02 {

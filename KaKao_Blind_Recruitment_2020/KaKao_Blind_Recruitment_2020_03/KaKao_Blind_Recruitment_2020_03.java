@@ -15,7 +15,7 @@ public class KaKao_Blind_Recruitment_2020_03 {
 		System.out.println(res);
 	}
 	
-	//	占쎈�占쎌�� 占쎌��占쎄맒占쎌�� 占쎌�띰옙�억옙��嚥∽옙 ��袁れ��占쎌��占쎌�삼옙�� ��遺얜굡 KaKao_Blind_Recruitment_2020_03_02甕곤옙 ��遺얜굡 筌〓㈇�э옙釉� 野�占�
+	//	필요 이상의 회전으로 비효율적인 코드 KaKao_Blind_Recruitment_2020_03_02번 코드 참고할 것
 	public static boolean solution(int[][] key, int[][] lock) {
 		int m = key.length;
 		int n = lock.length;

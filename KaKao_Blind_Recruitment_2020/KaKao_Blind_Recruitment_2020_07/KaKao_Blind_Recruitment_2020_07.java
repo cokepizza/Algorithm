@@ -2,7 +2,7 @@ package KaKao_Blind_Recruitment_2020_07;
 
 import java.util.LinkedList;
 
-//	ºí·Ï ÀÌµ¿ÇÏ±â
+//	ë¸”ëŸ­ ì´ë™í•˜ê¸°
 //	https://programmers.co.kr/learn/courses/30/lessons/60063
 
 public class KaKao_Blind_Recruitment_2020_07 {
