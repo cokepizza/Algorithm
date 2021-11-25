@@ -82,9 +82,9 @@ public class KaKao_Blind_Recruitment_2020_05 {
     }
 	
 	private static boolean checkValid(int y, int x, int a) {
-		if(a == 1) {	//	��
+		if(a == 1) {	//	보
 			if((y-1 >= 0 && arr[y-1][x][1-a]) || (y-1 >= 0 && x+1 <= n && arr[y-1][x+1][1-a]) || (x+1 <= n && x-1 >= 0 && arr[y][x-1][a] && arr[y][x+1][a])) return true;
-		} else {	//	���
+		} else {	//	기둥
 			if(y == 0 || (y-1 >= 0 && arr[y-1][x][a]) || arr[y][x][1-a] || (x-1 >= 0 && arr[y][x-1][1-a])) return true;
 		}
 		return false;
