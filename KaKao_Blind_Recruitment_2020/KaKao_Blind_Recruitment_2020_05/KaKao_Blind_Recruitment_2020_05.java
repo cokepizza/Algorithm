@@ -1,10 +1,13 @@
-package KCode5;
+package KaKao_Blind_Recruitment_2020_05;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class KCode5 {
+//	기둥과 보 설치
+//	https://programmers.co.kr/learn/courses/30/lessons/60061
+
+public class KaKao_Blind_Recruitment_2020_05 {
 	public static void main(String args[]) { 
 //		int[][] result = solution(5, new int[][]{{1,0,0,1}, {1,1,1,1}, {2,1,0,1}, {2,2,1,1}, {5,0,0,1}, {5,1,0,1}, {4,2,1,1}, {3,2,1,1}});
 		int[][] result = solution(5, new int[][]{{0,0,0,1}, {2,0,0,1}, {4,0,0,1}, {0,1,1,1}, {1,1,1,1}, {2,1,1,1}, {3,1,1,1}, {2,0,0,0}, {1,1,1,0}, {2,2,0,1}});

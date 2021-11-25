@@ -1,8 +1,11 @@
-package KCode7;
+package KaKao_Blind_Recruitment_2020_07;
 
 import java.util.LinkedList;
 
-public class KCode7 {
+//	블록 이동하기
+//	https://programmers.co.kr/learn/courses/30/lessons/60063
+
+public class KaKao_Blind_Recruitment_2020_07 {
 	public static class Node {
 		int y, x;
 		public Node(int y, int x) {

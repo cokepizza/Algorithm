@@ -1,5 +1,8 @@
 package KaKao_Blind_Recruitment_2020_03;
 
+//	자물쇠와 열쇠
+//	https://programmers.co.kr/learn/courses/30/lessons/60059
+
 public class KaKao_Blind_Recruitment_2020_03 {
 	public static void main(String args[]) {
 //		boolean res = solution(new int[][]{{0, 0, 0}, {1, 0, 0}, {0, 1, 1}}, new int[][] {{1, 1, 1}, {1, 1, 0}, {1, 0, 1}});
@@ -12,7 +15,7 @@ public class KaKao_Blind_Recruitment_2020_03 {
 		System.out.println(res);
 	}
 	
-	//	필요 이상의 회전으로 비효율적인 코드 KaKao_Blind_Recruitment_2020_03_02번 코드 참고할 것
+	//	占쎈�占쎌�� 占쎌��占쎄맒占쎌�� 占쎌�띰옙�억옙��嚥∽옙 ��袁れ��占쎌��占쎌�삼옙�� ��遺얜굡 KaKao_Blind_Recruitment_2020_03_02甕곤옙 ��遺얜굡 筌〓㈇�э옙釉� 野�占�
 	public static boolean solution(int[][] key, int[][] lock) {
 		int m = key.length;
 		int n = lock.length;

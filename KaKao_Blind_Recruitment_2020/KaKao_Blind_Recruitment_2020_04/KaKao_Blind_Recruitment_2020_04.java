@@ -1,9 +1,12 @@
-package KCode4;
+package KaKao_Blind_Recruitment_2020_04;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class KCode4 {
+//	가사 검색
+//	https://programmers.co.kr/learn/courses/30/lessons/60060
+
+public class KaKao_Blind_Recruitment_2020_04 {
 	public static class Trie {
 		Trie[] alpha;
 		HashMap <Integer, Integer> countMap;
