@@ -3,6 +3,9 @@ package KaKao_Blind_Recruitment_2019_01;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//	오픈 채팅방
+//	https://programmers.co.kr/learn/courses/30/lessons/42888
+
 public class KaKao_Blind_Recruitment_2019_01 {
 	public static void main(String args[]) {
 		String[] res = solution(new String[] {"Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"});

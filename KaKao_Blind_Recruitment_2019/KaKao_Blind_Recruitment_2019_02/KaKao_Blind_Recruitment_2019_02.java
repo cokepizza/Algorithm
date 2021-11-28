@@ -3,6 +3,9 @@ package KaKao_Blind_Recruitment_2019_02;
 import java.util.Arrays;
 import java.util.Comparator;
 
+//	실패율
+//	https://programmers.co.kr/learn/courses/30/lessons/42889
+
 public class KaKao_Blind_Recruitment_2019_02 {
 	public static void main(String args[]) {
 //		int []res = solution(5, new int[] {2, 1, 2, 6, 2, 4, 3, 3});
