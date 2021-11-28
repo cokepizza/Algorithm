@@ -3,7 +3,7 @@ package KaKao_Blind_Recruitment_2020_03;
 //	자물쇠와 열쇠
 //	https://programmers.co.kr/learn/courses/30/lessons/60059
 
-public class KaKao_Blind_Recruitment_2020_03_02 {
+public class KaKao_Blind_Recruitment_2020_03_2 {
 	public static void main(String args[]) {
 //		boolean ans = solution(new int[][] {{0, 0, 0}, {1, 0, 0}, {0, 1, 1}}, new int[][] {{1, 1, 1}, {1, 1, 0}, {1, 0, 1}});
 //		boolean ans = solution(new int[][] {{0, 1, 0}, {1, 0, 0}, {1, 0, 0}}, new int[][] {{1, 1, 1}, {1, 1, 0}, {1, 0, 1}});
