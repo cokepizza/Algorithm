@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
+//	https://www.acmicpc.net/problem/14225
+
 public class Code14225 {
 	public static HashSet <Integer> hashSet = new HashSet <>();
 	public static int []s;
