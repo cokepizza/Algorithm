@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+//	https://www.acmicpc.net/problem/15658
+
 public class Code15658 {
 	public static int n;
 	public static int []a;
